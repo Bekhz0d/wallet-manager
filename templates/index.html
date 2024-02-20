@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load i18n %}
+
+
+    <div class="mx-4 px-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card mt-3" style=" background-color: rgb(171, 193, 193);">
+                <div class="row">
+                    <div class="col-md-9">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">{% blocktrans %} Hisoblar {% endblocktrans %} </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3 add_wallet">
+                            <button href="#" class="btn btn-success mt-2"><h4><i class="bi bi-window-plus"></i></h4></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                {% for w in wallets %}
+                <div class="card mt-3">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ w.name }}</h4>
+                                <p class="card-text">{% blocktrans %} Qoldiq summa {% endblocktrans %}: <u>{{ w.balance }}</u> so'm</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row">
+                                <div class="justify-content-md-center pt-4 ml-5">
+                                    <div class="btn btn-outline-info">
+                                        <a class="edit_wallet add_wallet" href="#" data-id="{{ w.id }}"                            
+                                                                    data-name_uz="{{ w.name_uz }}"
+                                                                    data-name_ru="{{ w.name_ru }}"
+                                                                    data-name_en="{{ w.name_en }}">
+                                            <h5><i class="bi bi-pen"></i></h5>
+                                        </a>
+                                    </div>
+                                    <div class="btn btn-outline-danger mx-2" id="delete_wallet" data-card-id="{{ w.id }}">
+                                        <a href="#"><h5><i class="bi bi-trash"></i></h5></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+
+            
+
+            <div class="col-md-5 mx-5 mb-5 pb-5">
+                <div class="card mt-3" style="background-color: rgb(171, 193, 193);">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">{% blocktrans %} Kirim-chiqimlar {% endblocktrans %} </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <buttn href="#" class="btn btn-primary add_cash_flow ml-5 mt-2"><h5><i class="bi bi-plus-slash-minus"></i></h5></buttn>
+                        </div>
+                    </div>
+                </div>
+
+                {% if cash_flows %}
+                    {% for c in cash_flows %}
+                        <div class="card mt-3 {% if c.is_income %} income {% else %} expense {% endif %}">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="card-body mx-2">
+                                        <h5 class="card-title" style="display: inline;"><b>{{ c.category.name }}</b></h5><p class="mx-5 px-5" style="display: inline;">{{ c.date_time }}</p><br>
+                                        <p class="card-text" style="display: inline;"><u>{{ c.summa }}</u> so'm</p><h5 class="mx-5 px-5" style="display: inline;"><b><i>{{ c.wallet.name }}</i></b></h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="row"> 
+                                        <div class="justify-content-md-center pt-4 ml-5">
+                                            <!-- <div class="btn btn-outline-info">
+                                                <a href="#"  class="edit_cash_flow add_cash_flow" data-id="{{ c.id }}"
+                                                                                    data-wallet="{{ c.wallet }}"
+                                                                                    data-category="{{ c.category }}"
+                                                                                    data-sum="{{ c.summa }}">
+                                                    <h5><i class="bi bi-pen"></i></h5>
+                                                </a>
+                                            </div> -->
+                                            <div class="btn btn-outline-danger mx-2 delete_cash_flow" data-cash_flow-id="{{ c.id }}">
+                                                <a href="#">
+                                                    <h5><i class="bi bi-trash"></i></h5>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                <div class="card mt-3">
+                    <div class="container text-center">
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5>{% blocktrans %} Ma'lumot topilmadi... {% endblocktrans %} </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            
+
+
+
+
+            <div class="col-md-3 px-4">
+                <div class="card my-3" style="background-color: rgb(171, 193, 193);">
+                    <div class="card-body">
+                        <h4 class="card-title  text-center">{% blocktrans %} Saralash {% endblocktrans %} </h4>
+                    </div>
+                </div>
+                
+                <div class="mb-5 pb-5">
+                    <form action="{% url 'main' %}" method="POST">
+                        {% csrf_token %}
+                        <select class="form-select form-select-lg mb-3" name="by_wallet" aria-label="Large select example">
+                            <option value="" selected>{% blocktrans %} Hisoblar bo'yicha {% endblocktrans %} </option>
+                            {% for w in wallets %}
+                                <option value="{{ w.id }}">{{ w.name }}</option>
+                            {% endfor %}
+                        </select>
+    
+                        <select class="form-select form-select-lg mb-3"  name="quick_f" aria-label="Large select example">
+                            <option value="" selected>{% blocktrans %} Tezkor sozlamalar {% endblocktrans %} </option>
+                            <option value="daily">{% blocktrans %} Bugungi {% endblocktrans %} </option>
+                            <option value="weekly">{% blocktrans %} O'tgan hafta {% endblocktrans %} </option>
+                            <option value="monthly">{% blocktrans %} O'tgan oy {% endblocktrans %} </option>
+                        </select>
+                    
+                            <div class="form-group row mb-3">
+                                <label for="from" class="col-md-1 col-form-label">{% blocktrans %} dan {% endblocktrans %} </label>
+                                <div class="col-md-5">
+                                    <input type="date" class="form-control" id="from" name="from">
+                                </div>
+                                <label for="to" class="col-md-1 col-form-label">{% blocktrans %} gacha {% endblocktrans %} </label>
+                                <div class="col-md-5">
+                                    <input type="date" class="form-control" id="to" name="to">
+                                </div>
+                            </div>
+                            
+                            <select class="form-select form-select-lg mb-3" name="by_category" aria-label="Large select example">
+                                <option value="" selected>{% blocktrans %} Kategoriyalar bo'yicha {% endblocktrans %} </option>
+                                {% for c in categories %}
+                                    <option value="{{ c.id }}">{{ c.name }}</option>
+                                {% endfor %}
+                            </select>
+
+                            <select class="form-select form-select-lg mb-3" name="income_or_expense" aria-label="Large select example">
+                                <option value="" selected>{% blocktrans %} Kirimlar yoki Chiqimlar {% endblocktrans %} </option>
+                                    <option value="incomes">{% blocktrans %} Kirimlar {% endblocktrans %} </option>
+                                    <option value="expenses">{% blocktrans %} Chiqimlar {% endblocktrans %} </option>
+                            </select>
+
+                            <input type="hidden" name="redirect_url_filter" id="redirect_url">
+
+                        <button class="btn btn-info mx-2"><i class="bi bi-funnel"></i> {% blocktrans %} Filtrlash {% endblocktrans %} </button>
+                    </form>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <div class="card text-white" style="background-color: green;">
+                            <div class="card-body">
+                                <h4 class="card-title">{% blocktrans %} Hisobot {% endblocktrans %} </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div class="card mt-3 income">
+                            <div class="card-body ">
+                                <h4>{% blocktrans %} Kirimlar {% endblocktrans %} </h4><hr>
+                                <h6><b><u><i>{{ total_income }} so'm</i></u></b></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="card mt-3 expense">
+                            <div class="card-body ">
+                                <h4>{% blocktrans %} Chiqimlar {% endblocktrans %} </h4><hr>
+                                <h6><b><u><i>{{ total_expense }} so'm</i></u></b></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+<!---->
+    {% include 'modals/add_card.html' %}
+    {% include 'modals/delete_card.html' %}
+
+{% endblock %}

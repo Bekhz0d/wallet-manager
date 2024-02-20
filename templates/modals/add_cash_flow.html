@@ -1,0 +1,89 @@
+{% load i18n %}
+<div class="modal-bodys cash_flow_modal">
+    <div class="modale">
+        <h1> <span id="form_title"> {% blocktrans %} Kirim-chiqim qo'shish {% endblocktrans %} </span>
+            <a class="close add_cash_flow ml-5" type="button">
+              <i class="bi bi-x-square"></i>
+            </a>
+        </h1>
+        <form action="{% url 'cashflow_add' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="wallet">{% blocktrans %} Hisobni tanlang {% endblocktrans %}</label>
+              <select class="form-select form-select-lg mb-3" id="wallet" name="wallet" aria-label="Large select example">
+                {% for w in wallets %}
+                    <option value="{{ w.id }}">{{ w.name }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="category">{% blocktrans %} Kategoriyani tanlang {% endblocktrans %}</label>
+            <select class="form-select form-select-lg mb-3" id="category" name="category" aria-label="Large select example">
+              {% for c in categories %}
+                  <option value="{{ c.id }}">{{ c.name }}</option>
+              {% endfor %}
+            </select>
+
+            <div class="form-group">
+              <label for="cash_flow_sum"> {% blocktrans %} Summa {% endblocktrans %} </label>
+              <input type="number" id="cash_flow_sum" class="form-control" name="cash_flow_sum" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cash_flow_date"> {% blocktrans %} Sana {% endblocktrans %} </label>
+              <input type="date" id="cash_flow_date" class="form-control" name="cash_flow_date">
+            </div>
+  
+              <input type="hidden" id="cash_flow_id" name="cash_flow_id">
+              <input type="hidden" id="redirect_url_add_cash_flow" name="redirect_url_add_cash_flow">
+  
+              <div class="form-group">
+                <button class="btn btn-success my-3"> {% blocktrans %} Saqlash {% endblocktrans %} </button>
+              </div>
+          </form>
+    </div>
+  </div>
+  
+  <style>
+    .modal-bodys{
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 25%;
+        height: 100vh;
+        padding: 50px 20px 20px 20px;
+        background: white;
+        box-shadow: 0px 0px 5px black;
+        transform: translateX(100%);
+        transition: 0.7s;
+    }
+        
+    .show-modal{
+        transform: translateX(0%);
+    }
+  </style>
+  
+  <script>
+    document.getElementById('redirect_url_add_cash_flow').value = window.location
+
+    document.querySelectorAll('.add_cash_flow').forEach((el ,index) =>{
+      el.addEventListener('click', function(){
+          document.querySelector('.cash_flow_modal').classList.toggle('show-modal');
+            cash_flow_id.value = ''
+            cash_flow_wallet.value = ''
+            cash_flow_category.value = ''
+            cash_flow_sum.value = ''
+            form_title.textContent = "{% blocktrans %} Kirim-chiqim qo'shish {% endblocktrans %}"
+        })
+    });
+  
+    // document.querySelectorAll('.edit_cash_flow').forEach((el ,index) =>{
+    //   el.addEventListener('click', function(){
+    //     document.getElementById("cash_flow_id").value = el.getAttribute('data-id')
+    //     document.getElementById('cash_flow_wallet').ariaSelected = el.getAttribute('data-wallet') 
+    //     document.getElementById('cash_flow_category').ariaSelected = el.getAttribute('data-category') 
+    //     document.getElementById('cash_flow_sum').ariaSelected = el.getAttribute('data-sum') 
+    //     form_title.textContent = "{% blocktrans %} Taxrirlash {% endblocktrans %}"
+    //     })
+    // });
+  </script>
+  

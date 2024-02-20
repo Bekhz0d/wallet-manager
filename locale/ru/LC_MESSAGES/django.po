@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-18 17:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: config/settings.py:134
+msgid "Uzbek"
+msgstr ""
+
+#: config/settings.py:135
+msgid "English"
+msgstr ""
+
+#: config/settings.py:136
+msgid "Russian"
+msgstr ""
+
+#: templates/base.html:36 templates/incomes.html:62 templates/index.html:168
+#: templates/index.html:191
+msgid " Kirimlar "
+msgstr "Доходы"
+
+#: templates/base.html:39 templates/expenses.html:64 templates/index.html:169
+#: templates/index.html:199
+msgid " Chiqimlar "
+msgstr "Затраты"
+
+#: templates/base.html:47
+msgid "Chiqib ketish"
+msgstr "Выйти"
+
+#: templates/expenses.html:13
+msgid " Chiqim turlari "
+msgstr "Виды расходов"
+
+#: templates/expenses.html:108
+msgid " Ma'lumot topilmadi "
+msgstr "Информация не найдена"
+
+#: templates/expenses.html:127 templates/incomes.html:120
+#: templates/index.html:14
+msgid " Hisoblar "
+msgstr "Кошельки"
+
+#: templates/expenses.html:143 templates/incomes.html:136
+#: templates/index.html:30
+msgid " Qoldiq summa "
+msgstr "Баланс"
+
+#: templates/incomes.html:13
+msgid " Kirim turlari "
+msgstr "Вид дохода"
+
+#: templates/incomes.html:106 templates/index.html:111
+msgid " Ma'lumot topilmadi... "
+msgstr "Информация не найдена..."
+
+#: templates/index.html:64
+msgid " Kirim-chiqimlar "
+msgstr "Доходы-расходы"
+
+#: templates/index.html:127
+msgid " Saralash "
+msgstr "Фильтр"
+
+#: templates/index.html:135
+msgid " Hisoblar bo'yicha "
+msgstr "По кошелькам"
+
+#: templates/index.html:142
+msgid " Tezkor sozlamalar "
+msgstr "Быстрые настройки"
+
+#: templates/index.html:143
+msgid " Bugungi "
+msgstr "Сегодняшний"
+
+#: templates/index.html:144
+msgid " O'tgan hafta "
+msgstr "На прошлой неделе"
+
+#: templates/index.html:145
+msgid " O'tgan oy "
+msgstr "Прошлый месяц"
+
+#: templates/index.html:149
+msgid " dan "
+msgstr "от"
+
+#: templates/index.html:153
+msgid " gacha "
+msgstr "до"
+
+#: templates/index.html:160
+msgid " Kategoriyalar bo'yicha "
+msgstr "По категориям"
+
+#: templates/index.html:167
+msgid " Kirimlar yoki Chiqimlar "
+msgstr "Доходы или расходы"
+
+#: templates/index.html:174
+msgid " Filtrlash "
+msgstr "Фильтр"
+
+#: templates/index.html:182
+msgid " Hisobot "
+msgstr "Отчет"
+
+#: templates/modals/add_card.html:4 templates/modals/add_card.html:60
+msgid " Hisob qo'shish "
+msgstr "Добавить кошелек"
+
+#: templates/modals/add_card.html:12
+msgid " Hisob nomi (UZ) "
+msgstr "Имя кошелька (UZ) "
+
+#: templates/modals/add_card.html:16
+msgid " Hisob nomi (EN) "
+msgstr "Имя кошелька (EN) "
+
+#: templates/modals/add_card.html:20
+msgid " Hisob nomi (RU) "
+msgstr "Имя кошелька (RU) "
+
+#: templates/modals/add_card.html:27 templates/modals/add_cash_flow.html:40
+#: templates/modals/add_category.html:27
+#: templates/modals/add_category_income.html:27
+msgid " Saqlash "
+msgstr "Сохранять"
+
+#: templates/modals/add_card.html:70
+msgid " Hisobni taxrirlash "
+msgstr "Изменить кошелек"
+
+#: templates/modals/add_cash_flow.html:4 templates/modals/add_cash_flow.html:75
+#: templates/modals/add_category.html:4
+msgid " Kirim-chiqim qo'shish "
+msgstr "Добавьте доходы или расходы"
+
+#: templates/modals/add_cash_flow.html:12
+msgid " Hisobni tanlang "
+msgstr "Выберите кошелек"
+
+#: templates/modals/add_cash_flow.html:19
+msgid " Kategoriyani tanlang "
+msgstr "Выберите категорию"
+
+#: templates/modals/add_cash_flow.html:27
+msgid " Summa "
+msgstr "Количество"
+
+#: templates/modals/add_cash_flow.html:32
+msgid " Sana "
+msgstr "Дата"
+
+#: templates/modals/add_cash_flow.html:85
+msgid " Taxrirlash "
+msgstr "Редактирование"
+
+#: templates/modals/add_category.html:12
+#: templates/modals/add_category_income.html:12
+msgid " Kategoriya nomi (UZ) "
+msgstr "Название категории (UZ) "
+
+#: templates/modals/add_category.html:16
+#: templates/modals/add_category_income.html:16
+msgid " Kategoriya nomi (EN) "
+msgstr "Название категории (EN) "
+
+#: templates/modals/add_category.html:20
+#: templates/modals/add_category_income.html:20
+msgid " Kategoriya nomi (RU) "
+msgstr "Название категории (RU)"
+
+#: templates/modals/add_category.html:60
+#: templates/modals/add_category_income.html:4
+#: templates/modals/add_category_income.html:60
+msgid " Kategoriya qo'shish "
+msgstr "Добавить категорию"
+
+#: templates/modals/add_category.html:70
+msgid " Kategoriyani taxrirlash\" "
+msgstr "Изменить категорию"
+
+#: templates/modals/add_category_income.html:70
+msgid " Kategoriyani taxrirlash "
+msgstr "Изменить категорию"
+
+#: templates/modals/delete_card.html:4
+msgid " Hisobni o'chirishni xohlaysizmi ? "
+msgstr "Вы действительно хотите удалить ?"
+
+#: templates/modals/delete_card.html:7 templates/modals/delete_cash_flow.html:7
+#: templates/modals/delete_category.html:8
+msgid " Yo'q "
+msgstr "Нет"
+
+#: templates/modals/delete_card.html:8 templates/modals/delete_cash_flow.html:8
+#: templates/modals/delete_category.html:9
+msgid " Xa "
+msgstr "Да"
+
+#: templates/modals/delete_cash_flow.html:4
+msgid " Rostdan ham o'chirishni xohlaysizmi "
+msgstr "Вы действительно хотите удалить"
+
+#: templates/modals/delete_category.html:5
+msgid " Kategoriyani o'chirishni xohlaysizmi "
+msgstr "Вы действительно хотите удалить?"

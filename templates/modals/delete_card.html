@@ -1,0 +1,40 @@
+{% load i18n %}
+<div class="delte_wallet_modal">
+    <div class="modal_body">
+        {% blocktrans %} Hisobni o'chirishni xohlaysizmi ? {% endblocktrans %}
+    </div>
+    <div class="d-flex my-2">
+        <button class="btn btn-success mx-5" id="delete_wallet" >{% blocktrans %} Yo'q {% endblocktrans %}</button>
+        <a id="delete_url" class="btn btn-danger">{% blocktrans %} Xa {% endblocktrans %}</a>
+    </div>
+</div>
+
+<style>
+    .delte_wallet_modal{
+    position: fixed;
+    width: 400px;
+    padding: 30px;
+    background: white;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 5px black;
+    transition: 0.7s;
+}
+
+.delete_wallet_modal_show{
+top: 100px;
+}
+</style>
+
+
+<script>
+    document.querySelectorAll('#delete_wallet').forEach((el ,index) =>{
+        el.addEventListener('click', function(){
+            document.querySelector('.delte_wallet_modal').classList.toggle('delete_wallet_modal_show');
+            let wallet_id = el.getAttribute('data-card-id')
+            delete_url.href = `/wallet/${wallet_id}/delete`
+            }
+        )
+    });
+</script>  

@@ -1,0 +1,40 @@
+{% load i18n %}
+<div class="delete_cash_flow_modal">
+    <div class="modal_body">
+        {% blocktrans %} Rostdan ham o'chirishni xohlaysizmi {% endblocktrans %} ?
+    </div>
+    <div class="d-flex my-2">
+        <button class="btn btn-success delete_cash_flow mx-5" >{% blocktrans %} Yo'q {% endblocktrans %}</button>
+        <a id="delete_url_cash_flow" class="btn btn-danger">{% blocktrans %} Xa {% endblocktrans %}</a>
+    </div>
+</div>
+
+<style>
+    .delete_cash_flow_modal{
+    position: fixed;
+    width: 400px;
+    padding: 30px;
+    background: white;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 5px black;
+    transition: 0.7s;
+}
+
+.delete_cash_flow_modal_show{
+top: 100px;
+}
+</style>
+
+
+<script>
+    document.querySelectorAll('.delete_cash_flow').forEach((el ,index) =>{
+        el.addEventListener('click', function(){
+            document.querySelector('.delete_cash_flow_modal').classList.toggle('delete_cash_flow_modal_show');
+            let cash_flow_id = el.getAttribute('data-cash_flow-id')
+            delete_url_cash_flow.href = `/cash_flow/${cash_flow_id}/delete`
+            }
+        )
+    });
+</script>  

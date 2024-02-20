@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-18 17:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config/settings.py:134
+msgid "Uzbek"
+msgstr ""
+
+#: config/settings.py:135
+msgid "English"
+msgstr ""
+
+#: config/settings.py:136
+msgid "Russian"
+msgstr ""
+
+#: templates/base.html:36 templates/incomes.html:62 templates/index.html:168
+#: templates/index.html:191
+msgid " Kirimlar "
+msgstr "Incomes"
+
+#: templates/base.html:39 templates/expenses.html:64 templates/index.html:169
+#: templates/index.html:199
+msgid " Chiqimlar "
+msgstr "Expenses"
+
+#: templates/base.html:47
+msgid "Chiqib ketish"
+msgstr "Logout"
+
+#: templates/expenses.html:13
+msgid " Chiqim turlari "
+msgstr "Types of expense"
+
+#: templates/expenses.html:108
+msgid " Ma'lumot topilmadi "
+msgstr "No information found"
+
+#: templates/expenses.html:127 templates/incomes.html:120
+#: templates/index.html:14
+msgid " Hisoblar "
+msgstr "Wallets"
+
+#: templates/expenses.html:143 templates/incomes.html:136
+#: templates/index.html:30
+msgid " Qoldiq summa "
+msgstr "Balance"
+
+#: templates/incomes.html:13
+msgid " Kirim turlari "
+msgstr "Types of income"
+
+#: templates/incomes.html:106 templates/index.html:111
+msgid " Ma'lumot topilmadi... "
+msgstr "No information found..."
+
+#: templates/index.html:64
+msgid " Kirim-chiqimlar "
+msgstr "Incomes-Expenses"
+
+#: templates/index.html:127
+msgid " Saralash "
+msgstr "Filter"
+
+#: templates/index.html:135
+msgid " Hisoblar bo'yicha "
+msgstr "According to wallets"
+
+#: templates/index.html:142
+msgid " Tezkor sozlamalar "
+msgstr "Quick settings"
+
+#: templates/index.html:143
+msgid " Bugungi "
+msgstr "Today"
+
+#: templates/index.html:144
+msgid " O'tgan hafta "
+msgstr "Last week"
+
+#: templates/index.html:145
+msgid " O'tgan oy "
+msgstr "Last month"
+
+#: templates/index.html:149
+msgid " dan "
+msgstr "from"
+
+#: templates/index.html:153
+msgid " gacha "
+msgstr "to"
+
+#: templates/index.html:160
+msgid " Kategoriyalar bo'yicha "
+msgstr "According to category"
+
+#: templates/index.html:167
+msgid " Kirimlar yoki Chiqimlar "
+msgstr "Incomes or Expenses"
+
+#: templates/index.html:174
+msgid " Filtrlash "
+msgstr "Filter"
+
+#: templates/index.html:182
+msgid " Hisobot "
+msgstr "Report"
+
+#: templates/modals/add_card.html:4 templates/modals/add_card.html:60
+msgid " Hisob qo'shish "
+msgstr "Add a wallet"
+
+#: templates/modals/add_card.html:12
+msgid " Hisob nomi (UZ) "
+msgstr "Name of wallet (UZ)"
+
+#: templates/modals/add_card.html:16
+msgid " Hisob nomi (EN) "
+msgstr "Name of wallet (EN)"
+
+#: templates/modals/add_card.html:20
+msgid " Hisob nomi (RU) "
+msgstr "Name of wallet (RU)"
+
+#: templates/modals/add_card.html:27 templates/modals/add_cash_flow.html:40
+#: templates/modals/add_category.html:27
+#: templates/modals/add_category_income.html:27
+msgid " Saqlash "
+msgstr "Save"
+
+#: templates/modals/add_card.html:70
+msgid " Hisobni taxrirlash "
+msgstr "Edit a wallet"
+
+#: templates/modals/add_cash_flow.html:4 templates/modals/add_cash_flow.html:75
+#: templates/modals/add_category.html:4
+msgid " Kirim-chiqim qo'shish "
+msgstr "Add a Income or expense"
+
+#: templates/modals/add_cash_flow.html:12
+msgid " Hisobni tanlang "
+msgstr "Choose a wallet"
+
+#: templates/modals/add_cash_flow.html:19
+msgid " Kategoriyani tanlang "
+msgstr "Choose a category"
+
+#: templates/modals/add_cash_flow.html:27
+msgid " Summa "
+msgstr "Amount"
+
+#: templates/modals/add_cash_flow.html:32
+msgid " Sana "
+msgstr "Date"
+
+#: templates/modals/add_cash_flow.html:85
+msgid " Taxrirlash "
+msgstr "Edit"
+
+#: templates/modals/add_category.html:12
+#: templates/modals/add_category_income.html:12
+msgid " Kategoriya nomi (UZ) "
+msgstr "Name of the category (UZ)"
+
+#: templates/modals/add_category.html:16
+#: templates/modals/add_category_income.html:16
+msgid " Kategoriya nomi (EN) "
+msgstr "Name of the category (EN)"
+
+#: templates/modals/add_category.html:20
+#: templates/modals/add_category_income.html:20
+msgid " Kategoriya nomi (RU) "
+msgstr "Name of the category (RU)"
+
+#: templates/modals/add_category.html:60
+#: templates/modals/add_category_income.html:4
+#: templates/modals/add_category_income.html:60
+msgid " Kategoriya qo'shish "
+msgstr "Add a category"
+
+#: templates/modals/add_category.html:70
+msgid " Kategoriyani taxrirlash\" "
+msgstr "Edit a category"
+
+#: templates/modals/add_category_income.html:70
+msgid " Kategoriyani taxrirlash "
+msgstr "Edit a category"
+
+#: templates/modals/delete_card.html:4
+msgid " Hisobni o'chirishni xohlaysizmi ? "
+msgstr "Do you want to delete the wallet"
+
+#: templates/modals/delete_card.html:7 templates/modals/delete_cash_flow.html:7
+#: templates/modals/delete_category.html:8
+msgid " Yo'q "
+msgstr "No"
+
+#: templates/modals/delete_card.html:8 templates/modals/delete_cash_flow.html:8
+#: templates/modals/delete_category.html:9
+msgid " Xa "
+msgstr "Yes"
+
+#: templates/modals/delete_cash_flow.html:4
+msgid " Rostdan ham o'chirishni xohlaysizmi "
+msgstr "Are you sure you want to delete "
+
+#: templates/modals/delete_category.html:5
+msgid " Kategoriyani o'chirishni xohlaysizmi "
+msgstr "Are you sure you want to delete"

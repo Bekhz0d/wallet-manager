@@ -1,0 +1,73 @@
+{% load i18n %}
+<div class="modal-bodys add_edit_modal">
+  <div class="modale">
+      <h1> <span id="form_title"> {% blocktrans %} Hisob qo'shish {% endblocktrans %}  </span>
+          <a class="close add_wallet ml-5" type="button">
+            <i class="bi bi-x-square"></i>
+          </a>
+      </h1>
+      <form action="{% url 'main' %}" method="post">
+          {% csrf_token %}
+          <div class="form-group mt-4">
+            <label for="wallet_name_uz"> {% blocktrans %} Hisob nomi (UZ) {% endblocktrans %}</label>
+            <input type="text" id="wallet_name_uz" class="form-control" name="wallet_name_uz" required >
+          </div>
+          <div class="form-group mt-4">
+            <label for="wallet_name_en"> {% blocktrans %} Hisob nomi (EN) {% endblocktrans %}</label>
+            <input type="text" id="wallet_name_en" class="form-control" name="wallet_name_en" required >
+          </div>
+          <div class="form-group mt-4">
+            <label for="wallet_name_ru"> {% blocktrans %} Hisob nomi (RU) {% endblocktrans %} </label>
+            <input type="text" id="wallet_name_ru" class="form-control" name="wallet_name_ru" required >
+          </div>
+
+            <input type="hidden" id="wallet_id" name="wallet_id">
+
+            <div class="form-group mt-2">
+              <button class="btn btn-success my-3">{% blocktrans %} Saqlash {% endblocktrans %}  </button>
+            </div>
+        </form>
+  </div>
+</div>
+
+<style>
+  .modal-bodys{
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 25%;
+      height: 100vh;
+      padding: 50px 20px 20px 20px;
+      background: white;
+      box-shadow: 0px 0px 5px black;
+      transform: translateX(100%);
+      transition: 0.7s;
+  }
+      
+  .show-modal{
+      transform: translateX(0%);
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.add_wallet').forEach((el ,index) =>{
+    el.addEventListener('click', function(){
+        document.querySelector('.add_edit_modal').classList.toggle('show-modal');
+          wallet_id.value = ''
+          wallet_name_uz.value = ''
+          wallet_name_en.value = ''
+          wallet_name_ru.value = ''
+          form_title.textContent = "{% blocktrans %} Hisob qo'shish {% endblocktrans %}"
+      })
+  });
+
+  document.querySelectorAll('.edit_wallet').forEach((el ,index) =>{
+    el.addEventListener('click', function(){
+      document.getElementById("wallet_id").value = el.getAttribute('data-id')
+      document.getElementById('wallet_name_uz').value = el.getAttribute('data-name_uz')
+      document.getElementById('wallet_name_en').value = el.getAttribute('data-name_en')
+      document.getElementById('wallet_name_ru').value = el.getAttribute('data-name_ru')
+      form_title.textContent = "{% blocktrans %} Hisobni taxrirlash {% endblocktrans %}"
+      })
+  });
+</script>

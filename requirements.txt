@@ -1,0 +1,5 @@
+crispy-bootstrap5==2023.10
+Django==5.0.1
+django-crispy-forms==2.1
+django-modeltranslation==0.18.11
+python-gettext==5.0
